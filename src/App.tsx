@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import './App.css';
+import InputField from './components/InputField';
 
-const App = () => {
+const App: React.FC = () => {
+
+  const [todo, setTodo] = useState<string>('');
+
+  // This logs what you type in the input field
+  console.log(todo);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>React Typescript App</h1>
-      </header>
+      <span className="heading">Taskify</span>
+      <InputField todo={todo} setTodo={setTodo} />
     </div>
   )
 }
